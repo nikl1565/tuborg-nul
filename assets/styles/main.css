@@ -1,0 +1,145 @@
+/*------------------------------------*\
+  Global - variables, fonts etc.
+\*------------------------------------*/
+
+/* Variabler indsættes og redigeres her */
+:root {
+    /* Colors */
+    --color-primary: #253d80;
+    --color-primary-light: #c8e0d9;
+    --color-primary-dark: #0c1244;
+
+    --color-contrast: #fbc17c;
+
+    --color-tuborg: #215732;
+    --color-tuborg-black: #022D1B;
+
+    --color-white: #fff;
+    --color-grey: #e7e7e5;
+    --color-grey-dark: #C8C9C5;
+
+    /* Fontsizes */
+    /* ... */
+}
+
+@font-face {
+    font-family: 'Tuborg Serif';
+    src: url("../fonts/TuborgSerif-Regular.eot");
+    src: url("/TuborgSerif-Regular.eot?#iefix") format("embedded-opentype"),url("/TuborgSerif-Regular.woff2") format("woff2"),url("/TuborgSerif-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tuborg Serif';
+    src: url("/TuborgSerif-Bold.eot");
+    src: url("/TuborgSerif-Bold.eot?#iefix") format("embedded-opentype"),url("/TuborgSerif-Bold.woff2") format("woff2"),url("/TuborgSerif-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tuborg Serif';
+    src: url("/TuborgSerif-Extrabold.eot");
+    src: url("/TuborgSerif-Extrabold.eot?#iefix") format("embedded-opentype"), url("/TuborgSerif-Extrabold.woff2") format("woff2"), url("/TuborgSerif-Extrabold.woff") format("woff");
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Tuborg Icons";
+    src: url("/tuborgdk.eot");
+    src: url("/tuborgdk.eot?#iefix") format("embedded-opentype"),url("/tuborgdk.woff") format("woff"),url("/tuborgdk.ttf") format("truetype"),url("/tuborgdk.svg#tuborgdk") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+/*------------------------------------*\
+  GENERIC
+\*------------------------------------*/
+
+html {
+    box-sizing: border-box;
+    line-height: 1.5;
+    font-family: sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset, legend, figure, table, th, td, caption, hr {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+/*------------------------------------*\
+  BASE
+
+  H1, h2, p, ul, ol, li osv.
+\*------------------------------------*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Tuborg Serif', serif;
+    font-weight: 400;
+}
+
+h1 {
+    font-weight: 800;
+}
+
+h2 {
+    font-weight: 700;
+}
+
+p, ul, ol, li, button {
+    font-family: 'Aktiv Grotesk', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+
+
+/*------------------------------------*\
+  OBJECTS
+
+  skrives .o-indsæt-klasse-navn-her
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+  COMPONENTS
+
+  Skrives .c-indsæt-klasse-navn-her
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+  UTILITIES
+
+  Skrives .u-indsæt-klasse-navn-her
+\*------------------------------------*/
