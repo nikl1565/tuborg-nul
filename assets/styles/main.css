@@ -11,9 +11,6 @@
 
     --color-cta: #fbc17c;
 
-    --color-tuborg: #215732;
-    --color-tuborg-black: #022D1B;
-
     --color-white: #fff;
     --color-grey: #e7e7e5;
     --color-grey-dark: #C8C9C5;
@@ -25,7 +22,7 @@
     /* Objects */
     --container-width: 1400px;
     --container-padding: 30px;
-    --section-padding: 60px;
+    --section-padding: 100px;
 
     /* Components */
 
@@ -89,7 +86,7 @@ html {
     box-sizing: inherit;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset, legend, figure, table, th, td, caption, hr {
+body, h1, h2, h3, h4, h5, h6, p, a, blockquote, pre, dl, dd, ol, ul, form, fieldset, legend, figure, table, th, td, caption, hr {
     padding: 0;
     margin: 0;
 }
@@ -121,6 +118,7 @@ h2 {
     font-weight: 700;
 }
 
+a,
 p,
 ul,
 ol,
@@ -131,6 +129,11 @@ button {
     font-weight: 400;
 }
 
+h1,
+h2,
+h3,
+h4,
+a,
 p,
 ul,
 ol,
@@ -176,10 +179,6 @@ video {
     padding: 0 var(--container-padding);
 }
 
-.o-section {
-    padding: 50px 0;
-}
-
 
 
 
@@ -192,16 +191,48 @@ video {
 
 .c-page-heading {
     font-size: 5.25rem;
-    color: var(--color-white);
+    color: var(--color-black);
+    text-align: center;
 }
 
 .c-page-subheading {
+    color: var(--color-black);
+    text-align: center;
+}
+
+
+.c-section {
+    padding: var(--section-padding) 0;
+}
+
+.c-section--cta {
+    background-color: var(--color-cta);
+}
+
+.c-section.c-section--cta {
+    color: var(--color-black);
+}
+
+.c-section--primary {
+    background-color: var(--color-primary);
+}
+
+.c-section.c-section--primary {
     color: var(--color-white);
 }
 
+
 .c-introduction {
-    background-color: var(--color-primary);
+    background-color: var(--color-cta);
 }
+
+.c-introduction__tuborg-can {
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 
 
 .c-page-footer {
@@ -216,6 +247,7 @@ video {
 
 
 
+
 .c-button {
     display: inline-block;
     font-family: 'Tuborg Serif', serif;
@@ -227,6 +259,18 @@ video {
     padding: 8px 24px;
     border-radius: var(--button-border-radius);
     cursor: pointer;
+}
+
+.c-button:hover {
+
+}
+
+.c-button:active {
+
+}
+
+.c-button:focus {
+
 }
 
 .c-button--full-width {
@@ -258,20 +302,23 @@ video {
 
 .c-video__overlay {
     position: absolute;
-    background-color: #000;
+    background-color: rgba(0, 0, 0, .2);
     border-radius: var(--content-border-radius);
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    opacity: 0.2;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .c-video__play-button {
-    height: 40px;
-    width: 40px;
-    background-color: #000;
+    height: 120px;
+    width: 120px;
+    background-color: var(--color-cta);
+    border-radius: 50%;
+    text-align: center;
 }
 
 
