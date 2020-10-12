@@ -33,8 +33,9 @@
     --button-border-radius: 8px;
     --button-font-size: 1.5rem;
 
-    /* Text */
+    /* Content */
     --content-spacing: 15px;
+    --content-border-radius: 8px;
 }
 
 @font-face {
@@ -156,6 +157,7 @@ img,
 video {
     display: block;
     max-width: 100%;
+    border-radius: var(--content-border-radius);
 }
 
 
@@ -173,9 +175,6 @@ video {
     margin-right: auto;
     padding: 0 var(--container-padding);
 }
-
-
-
 
 .o-section {
     padding: 50px 0;
@@ -248,6 +247,31 @@ video {
 .c-button--white {
     color: var(--color-white);
     border-color: var(--color-white);
+}
+
+
+
+
+.c-video {
+    position: relative;
+}
+
+.c-video__overlay {
+    position: absolute;
+    background-color: #000;
+    border-radius: var(--content-border-radius);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.2;
+    display: flex;
+}
+
+.c-video__play-button {
+    height: 40px;
+    width: 40px;
+    background-color: #000;
 }
 
 
