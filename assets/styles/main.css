@@ -16,7 +16,10 @@
     --color-grey-dark: #C8C9C5;
 
     /* Fontsizes */
-    /* ... */
+    --font-size-h1: 3rem;
+    --font-size-h2: 2.25rem;
+    --font-size-h3: 1.5rem;
+    --font-size-p: 1.125rem;
 
 
     /* Objects */
@@ -78,6 +81,7 @@ html {
     box-sizing: border-box;
     line-height: 1.5;
     font-family: sans-serif;
+    position: relative;
 }
 
 *,
@@ -112,10 +116,20 @@ h6 {
 
 h1 {
     font-weight: 800;
+    font-size: var(--font-size-h1);
 }
 
 h2 {
     font-weight: 700;
+    font-size: var(--font-size-h2);
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+}
+
+p {
+    font-size: var(--font-size-paragraph);
 }
 
 a,
@@ -200,6 +214,23 @@ video {
     text-align: center;
 }
 
+.c-h1 {
+    font-family: 'Tuborg Serif', serif;
+    font-weight: 800;
+    font-size: var(--font-size-h1);
+}
+
+.c-h2 {
+    font-family: 'Tuborg Serif', serif;
+    font-weight: 700;
+    font-size: var(--font-size-h2);
+}
+
+.c-h3 {
+    font-family: 'Tuborg Serif', serif;
+    font-size: var(--font-size-h3);
+}
+
 
 .c-section {
     padding: var(--section-padding) 0;
@@ -259,10 +290,10 @@ video {
     padding: 8px 24px;
     border-radius: var(--button-border-radius);
     cursor: pointer;
+    transition: background .15s ease-in;
 }
 
 .c-button:hover {
-
 }
 
 .c-button:active {
@@ -273,7 +304,7 @@ video {
 
 }
 
-.c-button--full-width {
+.c-button--block {
     display: block;
     width: 100%;
 }
@@ -283,14 +314,40 @@ video {
     background-color: transparent;
 }
 
+.c-button--inverse:hover {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+}
+
+.c-button--inverse:active {
+
+}
+
+.c-button--inverse:focus {
+
+}
+
+.c-button--inverse-white {
+    color: var(--color-white);
+    border-color: var(--color-white);
+}
+
+.c-button--inverse-white:hover {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+}
+
+.c-button--inverse-white:active {
+
+}
+
+.c-button--inverse-white:focus {
+
+}
+
 .c-button--cta {
     background-color: var(--color-cta);
     border-color: var(--color-cta);
-}
-
-.c-button--white {
-    color: var(--color-white);
-    border-color: var(--color-white);
 }
 
 
@@ -321,6 +378,32 @@ video {
     text-align: center;
 }
 
+
+
+
+.c-game-popup {
+    position: fixed;
+    z-index: 1;
+    background-color: var(--color-white);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.c-game-popup.is-hidden {
+    display: none;
+}
+
+.c-game-popup__chart {
+    min-width: 320px;
+    min-height: 320px;
+    background-color: black;
+}
+
+.c-game-popup__tuborg-woman {
+    max-width: 150px;
+}
 
 /*------------------------------------*\
   UTILITIES
