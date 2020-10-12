@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- Language for the page example: da, en etc. -->
-<html lang="">
+<html lang="da">
 
 <head>
 
@@ -100,7 +100,7 @@
                     <img class="c-tuborg-person__image" src="https://via.placeholder.com/150" alt="#">
                     <div class="c-tuborg-person__speak-bubble">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum dolorum esse saepe quasi cum quisquam.</p>
-                        <button class="c-button c-button--cta">Tekst</button>
+                        <button class="[ c-button c-button--cta ] js-game-show-popup-button">Tekst</button>
                     </div>
                 </div>
             </div>
@@ -114,13 +114,13 @@
                 <h3>Fængende beskrivelse slash underoverskrift se videoen!</h3>
 
                 <div class="c-video">
-                    <div class="c-video__overlay">
+                    <div class="c-video__overlay js-video-player-overlay">
                         <!--
-                        <img class="c-video__play-button" src="" alt="#">
+                        <img class="c-video__play-button js-video-player-button" src="" alt="#">
                     -->
-                        <div class="c-video__play-button" src="" alt="#"></div>
+                        <div class="c-video__play-button js-video-player-button" src="" alt="#"></div>
                     </div>
-                    <video class="c-campaign__video" src="#" poster="https://picsum.photos/seed/picsum/1920/1080"></video>
+                    <video class="c-campaign__video js-video-player-video" src="#" poster="https://picsum.photos/seed/picsum/1920/1080"></video>
                 </div>
 
                 <p>Hvordan drikker du din Tuborg Nul?</p>
@@ -181,7 +181,7 @@
 
     </footer>
 
-    <div class="c-game-popup">
+    <div class="c-game-popup is-hidden js-game-popup">
         <div class="o-container">
 
             <div class="c-game-popup__header">
@@ -199,13 +199,13 @@
             </div>
 
             <div class="c-game-popup__button-group">
-                <button class="c-button c-button--cta">Mulighed 1</button>
-                <button class="c-button c-button--cta">Mulighed 2</button>
-                <button class="c-button c-button--cta">Mulighed 3</button>
-                <button class="c-button c-button--cta">Mulighed 4</button>
+                <button class="[ c-button c-button--cta ] js-game-button-1">Mulighed 1</button>
+                <button class="[ c-button c-button--cta ] js-game-button-2">Mulighed 2</button>
+                <button class="[ c-button c-button--cta ] js-game-button-3">Mulighed 3</button>
+                <button class="[ c-button c-button--cta ] js-game-button-4">Mulighed 4</button>
             </div>
 
-            <img class="c-game-popup__tuborg-woman" src="assets/images/tuborg-kvinde.png" alt="Tuborg Kvinde i blåt der peger opad">
+            <img class="c-game-popup__tuborg-woman" src="assets/images/tuborg-kvinde.png" alt="Tegnet Tuborg kvinde i blåt der peger opad">
 
         </div>
     </div>
