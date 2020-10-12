@@ -9,7 +9,7 @@
     --color-primary-light: #c8e0d9;
     --color-primary-dark: #0c1244;
 
-    --color-contrast: #fbc17c;
+    --color-cta: #fbc17c;
 
     --color-tuborg: #215732;
     --color-tuborg-black: #022D1B;
@@ -20,36 +20,51 @@
 
     /* Fontsizes */
     /* ... */
+
+
+    /* Objects */
+    --container-width: 1400px;
+    --container-padding: 30px;
+    --section-padding: 60px;
+
+    /* Components */
+
+    /* Buttons */
+    --button-border-radius: 8px;
+    --button-font-size: 1.5rem;
+
+    /* Text */
+    --content-spacing: 15px;
 }
 
 @font-face {
     font-family: 'Tuborg Serif';
     src: url("../fonts/TuborgSerif-Regular.eot");
-    src: url("/TuborgSerif-Regular.eot?#iefix") format("embedded-opentype"),url("/TuborgSerif-Regular.woff2") format("woff2"),url("/TuborgSerif-Regular.woff") format("woff");
+    src: url("/TuborgSerif-Regular.eot?#iefix") format("embedded-opentype"),url("../fonts/TuborgSerif-Regular.woff2") format("woff2"),url("../fonts/TuborgSerif-Regular.woff") format("woff");
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Tuborg Serif';
-    src: url("/TuborgSerif-Bold.eot");
-    src: url("/TuborgSerif-Bold.eot?#iefix") format("embedded-opentype"),url("/TuborgSerif-Bold.woff2") format("woff2"),url("/TuborgSerif-Bold.woff") format("woff");
+    src: url("../fonts/TuborgSerif-Bold.eot");
+    src: url("../fonts/TuborgSerif-Bold.eot?#iefix") format("embedded-opentype"),url("../fonts/TuborgSerif-Bold.woff2") format("woff2"),url("../fonts/TuborgSerif-Bold.woff") format("woff");
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Tuborg Serif';
-    src: url("/TuborgSerif-Extrabold.eot");
-    src: url("/TuborgSerif-Extrabold.eot?#iefix") format("embedded-opentype"), url("/TuborgSerif-Extrabold.woff2") format("woff2"), url("/TuborgSerif-Extrabold.woff") format("woff");
+    src: url("../fonts/TuborgSerif-Extrabold.eot");
+    src: url("../fonts/TuborgSerif-Extrabold.eot?#iefix") format("embedded-opentype"), url("../fonts/TuborgSerif-Extrabold.woff2") format("woff2"), url("../fonts/TuborgSerif-Extrabold.woff") format("woff");
     font-weight: 800;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Tuborg Icons";
-    src: url("/tuborgdk.eot");
-    src: url("/tuborgdk.eot?#iefix") format("embedded-opentype"),url("/tuborgdk.woff") format("woff"),url("/tuborgdk.ttf") format("truetype"),url("/tuborgdk.svg#tuborgdk") format("svg");
+    src: url("../fonts/tuborgdk.eot");
+    src: url("../fonts/tuborgdk.eot?#iefix") format("embedded-opentype"),url("../fonts/tuborgdk.woff") format("woff"),url("../fonts/tuborgdk.ttf") format("truetype"),url("../fonts/tuborgdk.svg#tuborgdk") format("svg");
     font-weight: normal;
     font-style: normal;
 }
@@ -86,6 +101,7 @@ body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset
   H1, h2, p, ul, ol, li osv.
 \*------------------------------------*/
 
+/* Text elements */
 h1,
 h2,
 h3,
@@ -104,13 +120,40 @@ h2 {
     font-weight: 700;
 }
 
-p, ul, ol, li, button {
+p,
+ul,
+ol,
+li,
+button {
     font-family: 'Aktiv Grotesk', sans-serif;
     font-style: normal;
     font-weight: 400;
 }
 
+p,
+ul,
+ol,
+li,
+button,
 img {
+    margin-bottom: var(--content-spacing);
+}
+
+/*
+    Makes the last child in the section of the content not taking up whitespace below, which we do not want.
+*/
+p:last-child,
+ul:last-child,
+ol:last-child,
+li:last-child,
+button:last-child,
+img:last-child {
+    margin-bottom: 0;
+}
+
+/* Image and video */
+img,
+video {
     display: block;
     max-width: 100%;
 }
@@ -124,6 +167,20 @@ img {
   skrives .o-indsæt-klasse-navn-her
 \*------------------------------------*/
 
+.o-container {
+    max-width: var(--container-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--container-padding);
+}
+
+
+
+
+.o-section {
+    padding: 50px 0;
+}
+
 
 
 
@@ -134,8 +191,64 @@ img {
   Skrives .c-indsæt-klasse-navn-her
 \*------------------------------------*/
 
+.c-page-heading {
+    font-size: 5.25rem;
+    color: var(--color-white);
+}
+
+.c-page-subheading {
+    color: var(--color-white);
+}
+
+.c-introduction {
+    background-color: var(--color-primary);
+}
 
 
+.c-page-footer {
+    background-color: var(--color-primary-dark);
+    padding: var(--section-padding) 0;
+}
+
+.c-page-footer__tuborg-logo {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+.c-button {
+    display: inline-block;
+    font-family: 'Tuborg Serif', serif;
+    font-weight: 700;
+    font-size: var(--button-font-size);
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    padding: 8px 24px;
+    border-radius: var(--button-border-radius);
+    cursor: pointer;
+}
+
+.c-button--full-width {
+    display: block;
+    width: 100%;
+}
+
+.c-button--inverse {
+    color: var(--color-primary);
+    background-color: transparent;
+}
+
+.c-button--cta {
+    background-color: var(--color-cta);
+    border-color: var(--color-cta);
+}
+
+.c-button--white {
+    color: var(--color-white);
+    border-color: var(--color-white);
+}
 
 
 /*------------------------------------*\
