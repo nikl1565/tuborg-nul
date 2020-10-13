@@ -38,6 +38,7 @@
 
 <body>
 
+    <!--
     <section class="c-section">
         <div class="o-container">
             <h1>Tuborg Nul</h1>
@@ -64,6 +65,7 @@
             </ol>
         </div>
     </section>
+-->
 
 
 
@@ -82,13 +84,15 @@
                         0% Alkohol
                     </h2>
                     <img class="c-introduction__tuborg-can" src="assets/images/tuborg-nul-daase-vaad.png" alt="#">
-                    <img class="c-introduction__button-arrow" src="#" alt="#">
+                    <a href="#c-about-taste">
+                        <img class="c-icon c-introduction__button-arrow a-up-down" src="assets/icons/ikon-pil-ned.svg" alt="#">
+                    </a>
                 </div>
             </div>
 
         </section>
 
-        <section class="c-about-taste c-section">
+        <section id="c-about-taste" class="c-about-taste c-section js-c-about-taste">
 
             <div class="o-container">
                 <h2 class="c-section-heading">Tuborg Nul er unik.</h2>
@@ -115,12 +119,13 @@
 
                 <div class="c-video">
                     <div class="c-video__overlay js-video-player-overlay">
-                        <!--
-                        <img class="c-video__play-button js-video-player-button" src="" alt="#">
-                    -->
-                        <div class="c-video__play-button js-video-player-button" src="" alt="#"></div>
+                        <div class="c-video__play-button js-video-player-button">
+                        </div>
                     </div>
-                    <video class="c-campaign__video js-video-player-video" src="#" poster="https://picsum.photos/seed/picsum/1920/1080"></video>
+                    <video class="c-campaign__video js-video-player-video" controls>
+                        <source src="assets/media/tuborg-nul-reklamekampagne.mp4" type="video/mp4">
+                        Din browser understøtter ikke vores videoafspiller.
+                    </video>
                 </div>
 
                 <p>Hvordan drikker du din Tuborg Nul?</p>
@@ -144,7 +149,7 @@
                 <div class="o-image-grid">
                     <div class="o-image-grid__column">
                         <div class="c-image-card">
-                            <img class="c-image-card__image" src="https://picsum.photos/lol/picsum/1920/1080" alt="#">
+                            <img class="c-image-card__image" src="#" alt="#">
                         </div>
                         <div class="c-image-card">
                             <img class="c-image-card__image" src="https://picsum.photos/seed/picsum/1920/1080" alt="#">
@@ -177,7 +182,7 @@
     </main>
 
     <footer class="c-page-footer">
-        <img class="c-page-footer__tuborg-logo" src="assets/icons/icon-tuborg-footer.svg" alt="#">
+        <img class="c-page-footer__tuborg-logo" src="assets/icons/ikon-tuborg-footer.svg" alt="#">
 
     </footer>
 
@@ -211,6 +216,4 @@
     </div>
 
     <script src="assets/scripts/script.js"></script>
-</body>
-
-</html>
+</body></html>
