@@ -40,37 +40,6 @@
     --content-border-radius: 8px;
 }
 
-@font-face {
-    font-family: 'Tuborg Serif';
-    src: url("../fonts/TuborgSerif-Regular.eot");
-    src: url("/TuborgSerif-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/TuborgSerif-Regular.woff2") format("woff2"), url("../fonts/TuborgSerif-Regular.woff") format("woff");
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Tuborg Serif';
-    src: url("../fonts/TuborgSerif-Bold.eot");
-    src: url("../fonts/TuborgSerif-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/TuborgSerif-Bold.woff2") format("woff2"), url("../fonts/TuborgSerif-Bold.woff") format("woff");
-    font-weight: 700;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Tuborg Serif';
-    src: url("../fonts/TuborgSerif-Extrabold.eot");
-    src: url("../fonts/TuborgSerif-Extrabold.eot?#iefix") format("embedded-opentype"), url("../fonts/TuborgSerif-Extrabold.woff2") format("woff2"), url("../fonts/TuborgSerif-Extrabold.woff") format("woff");
-    font-weight: 800;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Tuborg Icons";
-    src: url("../fonts/tuborgdk.eot");
-    src: url("../fonts/tuborgdk.eot?#iefix") format("embedded-opentype"), url("../fonts/tuborgdk.woff") format("woff"), url("../fonts/tuborgdk.ttf") format("truetype"), url("../fonts/tuborgdk.svg#tuborgdk") format("svg");
-    font-weight: normal;
-    font-style: normal;
-}
 
 
 
@@ -140,17 +109,17 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Tuborg Serif', serif;
+    font-family: 'turnip-re', serif;
     font-weight: 400;
 }
 
 h1 {
-    font-weight: 800;
+    font-weight: 600;
     font-size: var(--font-size-h1);
 }
 
 h2 {
-    font-weight: 700;
+    font-weight: 600;
     font-size: var(--font-size-h2);
 }
 
