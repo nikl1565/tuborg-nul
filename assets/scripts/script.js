@@ -30,20 +30,111 @@ const videoPlayerOverlay = document.querySelector(".js-video-player-overlay");
 
 // Statistics section
 const statTooltip = document.querySelector(".js-tooltip");
+const statTooltipTitle = document.querySelector(".js-tooltip-title");
+const statTooltipAmount = document.querySelector(".js-tooltip-amount");
+const statTooltipPercentage = document.querySelector(".js-tooltip-percentage");
+
+let pieCounter = 1;
 // TODO: Hent values dynamisk fra google sheet filen
-const values = [];
-const offset = [0];
-const circumference = Math.PI * 100;
-let total = 0;
-// Her beregner vi summen af værdierne
-//values.forEach(value => total += value);
+const pieValues0 = [
+    {
+        title: "Med en god ven/med gode venner",
+        amount: 40
+    },
+    {
+        title: "I en park",
+        amount: 11
+    },
+    {
+        title: "Til private sammenkomster",
+        amount: 46
+    },
+    {
+        title: "Til fest i byen",
+        amount: 17
+    },
 
-// Herefter kan vi beregne forholdet
-const forhold = circumference / total;
+];
 
+const pieValues1 = [
+    {
+        title: "I kombination med alkoholiske øl, som et middel til at påvirke hvor fuld jeg bliver",
+        amount: 22
+    },
+    {
+        title: "Aftenen inden en vigtig aftale",
+        amount: 36
+    },
+    {
+        title: "Sidst på aftenen til en fest",
+        amount: 31
+    },
+    {
+        title: "Fordi det smager godt",
+        amount: 29
+    },
+    {
+        title: "På en hverdagsaften",
+        amount: 44
+    },
+];
+
+const pieValues2 = [
+    {
+        title: "I kombination med alkoholiske øl, som et middel til at påvirke hvor fuld jeg bliver",
+        amount: 20
+    },
+    {
+        title: "Aftenen inden en vigtig aftale",
+        amount: 37
+    },
+    {
+        title: "Sidst på aftenen til en fest",
+        amount: 22
+    },
+    {
+        title: "Fordi det smager godt",
+        amount: 30
+    },
+    {
+        title: "På en hverdagsaften",
+        amount: 56
+    },
+];
+
+
+const pieValues3 = [
+    {
+        title: "Det højner kvaliteten af samværet",
+        amount: 23
+    },
+    {
+        title: "Det styrker fællesskabet",
+        amount: 13
+    },
+    {
+        title: "Det bryder med opfattelsen om hvad en fest er",
+        amount: 27
+    },
+    {
+        title: "Det er  godt for samfundet generelt",
+        amount: 36
+    },
+];
+
+const allPieData = [
+    pieValues0,
+    pieValues1,
+    pieValues2,
+    pieValues3
+];
+
+console.log(`Pie data ${allPieData}`);
 
 function init() {
     console.log('DOM loaded');
+
+    document.querySelector(".js-beer-can").classList.add("a-bounce-in-down");
 
     initVideoPlayer();
 
@@ -73,43 +164,34 @@ async function getData() {
 function initStatistics() {
     console.log('initStatistics');
 
-    let pieChartOneData = statisticsData;
-    let pieChartOneValues = [];
-    console.log(pieChartOneData);
-
-    pieChartOneData.forEach(person => {
-
-        if (person.gsx$prøvetafb.$t == "Ja") {
-            let string = person.gsx$prøvetisituation.$t.split(", ");
-            string.forEach(string => {
-                if (string != "") {
-                    pieChartOneValues.push(string);
-                }
-            });
-        }
+    allPieData.forEach(pieData => {
+        animate(pieData);
     });
-
-    let test = {};
-
-    pieChartOneValues.forEach(element => {
-        test[element] = (test[element] || 0) + 1;
-    });
-
-    console.log(test);
-
-    //    for (index = test.length; index < test.length; index++) {
-    //        console.log(index);
-    //    }
-    //    test.forEach(number => total += number);
-
-
-    animate();
 }
 
-function animate() {
+function animate(data) {
     console.log('Animate');
 
-    document.querySelectorAll(".c-pie-chart:first-child circle").forEach((circle, index) => {
+    let values = [];
+    let titles = [];
+
+    data.forEach(pie => {
+        values.push(pie.amount);
+        titles.push(pie.title);
+    });
+
+    console.log(values);
+    const offset = [0];
+    const circumference = Math.PI * 100;
+    let total = 0;
+
+    // Her beregner vi summen af værdierne
+    values.forEach(value => total += value);
+
+    // Herefter kan vi beregne forholdet
+    const forhold = circumference / total;
+
+    document.querySelectorAll(`.c-statistics__diagram:nth-child(${pieCounter}) circle`).forEach((circle, index) => {
         circle.style.strokeDasharray = `${values[index] * forhold} ${circumference}`;
 
         offset.push(values[index] + offset[index]);
@@ -118,16 +200,45 @@ function animate() {
 
         circle.setAttribute("data-value", values[index]);
         circle.setAttribute("data-percent", values[index] / total * 100);
+        circle.setAttribute("data-index", index);
+
+        let target = document.querySelector(`.c-statistics__diagram:nth-child(${pieCounter}) .c-statistics__pie-info-group`);
+
+        target.innerHTML += `<p class="c-statistics__pie-info" data-index="${index}">${titles[index]} ${values[index]}</p>`;
+
+        let lastChild = target.lastChild;
+
+        target.lastChild.addEventListener("mouseover", e => showPieElement(lastChild));
 
         circle.addEventListener("mouseover", e => showTooltip(e));
         circle.addEventListener("mouseout", hideTooltip);
     });
+
+    pieCounter++;
+}
+
+function showPieElement(lastChild) {
+    console.log('Touchy touch!');
+    console.log(lastChild);
+    let index = lastChild.dataset.index;
+    console.log(index);
+    lastChild.removeEventListener("mouseover", e => showPieElement(lastChild));
+    lastChild.addEventListener("mouseout", e => hidePieElement(lastChild));
+    let target = lastChild.parentElement.parentElement.querySelector(`circle[data-index="${index}"]`);
+    console.log(target);
+    target.setAttribute("data-highligthed", "true");
+}
+
+function hidePieElement(lastChild) {
+    console.log('Hidey hide!');
+    lastChild.setAttribute("data-highlighted", "false");
 }
 
 function showTooltip(element) {
     statTooltip.classList.remove("is-hidden");
     window.addEventListener("mousemove", moveToolTip);
-    statTooltip.textContent = `${Number(element.target.dataset.percent).toFixed(2)}%`;
+    statTooltipPercentage.textContent = `${Number(element.target.dataset.percent).toFixed(2)}%`;
+    statTooltipAmount.textContent = `Antal: ${element.target.dataset.value}`;
 }
 
 function hideTooltip() {
@@ -182,14 +293,20 @@ function initVideoPlayer() {
 
     videoPlayerVideo.volume = 0.5;
 
+    videoPlayerVideo.onpause = function () {
+        videoPlayerOverlay.classList.remove('is-hidden');
+    }
+
     videoPlayerButton.addEventListener("click", videoPlayerPlayPause);
 }
+
 
 function videoPlayerPlayPause() {
 
     if (videoPlayerVideo.paused) {
         console.log('Play video');
         videoPlayerVideo.play();
+        videoPlayerOverlay.classList.add("is-hidden");
     } else {
         console.log('Pause video');
         videoPlayerVideo.pause();
