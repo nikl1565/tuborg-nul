@@ -3,3 +3,6 @@
 # Example .gitignore files: https://github.com/github/gitignore
 /bower_components/
 /node_modules/
+/assets/desktop.ini
+/assets/styles/desktop.ini
+/desktop.ini
