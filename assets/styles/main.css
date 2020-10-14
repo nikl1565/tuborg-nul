@@ -583,8 +583,8 @@ a {
 
 
 .tooltip {
-    height: 105.5px;
-    width: 104px;
+    height: 316.5px;
+    width: 312px;
     color: #fff;
     position: absolute;
     background-image: url(../icons/tooltip.svg);
@@ -593,6 +593,9 @@ a {
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    margin-left: 10px;
+    margin-top: -30px;
+    padding: 30px;
 
 }
 

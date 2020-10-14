@@ -201,6 +201,7 @@ function animate(data) {
         circle.setAttribute("data-value", values[index]);
         circle.setAttribute("data-percent", values[index] / total * 100);
         circle.setAttribute("data-index", index);
+        circle.setAttribute("data-title", titles[index]);
 
         let target = document.querySelector(`.c-statistics__diagram:nth-child(${pieCounter}) .c-statistics__pie-info-group`);
 
@@ -237,8 +238,9 @@ function hidePieElement(lastChild) {
 function showTooltip(element) {
     statTooltip.classList.remove("is-hidden");
     window.addEventListener("mousemove", moveToolTip);
+    statTooltipTitle.textContent = `${element.target.dataset.title}`;
     statTooltipPercentage.textContent = `${Number(element.target.dataset.percent).toFixed(2)}%`;
-    statTooltipAmount.textContent = `Antal: ${element.target.dataset.value}`;
+    statTooltipAmount.textContent = `${element.target.dataset.value} personer`;
 }
 
 function hideTooltip() {
