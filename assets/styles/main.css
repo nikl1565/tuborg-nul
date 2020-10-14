@@ -9,6 +9,8 @@
     --color-primary-light: #c8e0d9;
     --color-primary-dark: #0c1244;
 
+    --color-chart-one: #7180AC;
+
     --color-cta: #fbc17c;
 
     --color-white: #fff;
@@ -114,7 +116,8 @@ table,
 th,
 td,
 caption,
-hr {
+hr,
+svg {
     padding: 0;
     margin: 0;
 }
@@ -308,6 +311,18 @@ video {
 
 
 
+.c-tuborg-person__image {
+    max-width: 300px;
+}
+
+.c-tuborg-person__speak-bubble {
+    background-image: url(../icons/tuborg-talebobbel-groen.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
 .c-page-footer {
     background-color: var(--color-primary-dark);
     padding: var(--section-padding) 0;
@@ -380,8 +395,89 @@ video {
 }
 
 
+/*
+
+    Statistics section
+
+*/
+
+.c-statistics {
+    position: relative;
+}
+
+/* Circle diagram */
+.c-pie-chart {
+    width: 300px;
+    stroke-width: 100;
+    font-size: .5em;
+    transform: rotate(-90deg);
+    border-radius: 50%;
+    fill: none;
+}
+
+.c-pie-chart > circle {
+    transition: all 1s;
+}
+
+.c-pie-chart > circle:nth-child(1) {
+    stroke: var(--color-primary);
+}
+
+.c-pie-chart > circle:nth-child(2) {
+    stroke: var(--color-primary-dark);
+}
+
+.c-pie-chart > circle:nth-child(3) {
+    stroke: var(--color-chart-one);
+}
+
+.tooltip {
+    margin-left: 10px;
+    height: 60px;
+    width: 100px;
+    background-color: #000;
+    color: #fff;
+    position: absolute;
+}
+
+.tooltip.is-hidden {
+    display: none;
+}
 
 
+/* Bar chart */
+.c-bar-chart {
+    max-width: 500px;
+    background-color: aqua;
+}
+
+.c-bar-chart__chart {
+    color: aqua;
+}
+
+.c-bar-chart__chart > line {
+    stroke: blue;
+    stroke-width: .5;
+}
+
+.c-bar-chart__chart > text {
+    font-size: 5px;
+    font-family: sans-serif;
+    stroke: darkblue;
+}
+
+.c-bar-chart__chart > rect {
+    fill: darkblue;
+}
+
+.c-bar-chart__bars > line {
+    stroke-width: 20;
+    stroke: orange;
+    transition:
+}
+
+
+/* Video player */
 .c-video {
     position: relative;
 }
@@ -412,7 +508,7 @@ video {
 
 
 
-
+/* Game popup */
 .c-game-popup {
     position: fixed;
     z-index: 1;
@@ -457,7 +553,7 @@ video {
     }
 
     100% {
-        transform: translateY(-20px)
+        transform: translateY(-20px);
     }
 }
 
