@@ -122,6 +122,9 @@ svg {
     margin: 0;
 }
 
+hr {
+    border: 0;
+}
 
 
 /*------------------------------------*\
@@ -197,6 +200,7 @@ p:last-child,
 ul:last-child,
 ol:last-child,
 li:last-child,
+a:last-child,
 button:last-child,
 img:last-child,
 svg:last-child {
@@ -237,14 +241,25 @@ video {
   Skrives .c-indsæt-klasse-navn-her
 \*------------------------------------*/
 
+.c-background-video {
+    position: fixed;
+    z-index: -1;
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+}
+
 .c-page-heading {
     font-size: 5.25rem;
-    color: var(--color-primary);
+    color: var(--color-white);
     text-align: center;
 }
 
 .c-page-subheading {
-    color: var(--color-primary);
+    color: var(--color-white);
     text-align: center;
 }
 
@@ -269,9 +284,30 @@ video {
     width: 100px;
 }
 
+.c-section-spacing {
+    background-image: url(../icons/sectionend2a.svg);
+    background-size: auto;
+    height: 100px;
+    width: 100%;
+}
+
+.c-section-spacing--top {
+    align-self: flex-start;
+}
+
+.c-section-spacing--bottom {
+    align-self: flex-end;
+}
+
 
 .c-section {
     padding: var(--section-padding) 0;
+    background-color: var(--color-white);
+}
+
+.c-section--style {
+    display: flex;
+    flex-direction: column;
 }
 
 .c-section--cta {
@@ -290,11 +326,17 @@ video {
     color: var(--color-white);
 }
 
+.c-section.c-section--no-padding {
+    padding: 0;
+}
+
+
+
 .c-introduction {
-    background-color: var(--color-cta);
+    background-color: transparent;
     min-height: 100vh;
     width: 100%;
-    padding: 30px 0;
+    padding: 30px 0 0;
 }
 
 .c-introduction__tuborg-can {
@@ -544,7 +586,7 @@ video {
 \*------------------------------------*/
 
 .a-up-down {
-    animation: k-up-down 1s infinite alternate;
+    animation: k-up-down 1.25s infinite alternate;
 }
 
 @keyframes k-up-down {
@@ -553,7 +595,7 @@ video {
     }
 
     100% {
-        transform: translateY(-20px);
+        transform: translateY(-40px);
     }
 }
 
@@ -563,3 +605,15 @@ video {
 
   Skrives .u-indsæt-klasse-navn-her
 \*------------------------------------*/
+
+.u-flex-grow-1 {
+    flex-grow: 1;
+}
+
+.u-flex-end {
+    align-self: flex-end;
+}
+
+.u-color-primary {
+    color: var(--color-primary);
+}
