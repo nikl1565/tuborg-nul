@@ -423,7 +423,7 @@ video {
     font-size: .5em;
     transform: rotate(-90deg);
     border-radius: 50%;
-    fill: none;
+    fill: var(--color-white);
 }
 
 .c-pie-chart > circle {
@@ -459,7 +459,7 @@ video {
 /* Bar chart */
 .c-bar-chart {
     max-width: 500px;
-    background-color: aqua;
+    /*    background-color: aqua;*/
 }
 
 .c-bar-chart__chart {
@@ -467,23 +467,32 @@ video {
 }
 
 .c-bar-chart__chart > line {
-    stroke: blue;
+    stroke: var(--color-primary-dark);
     stroke-width: .5;
 }
 
 .c-bar-chart__chart > text {
     font-size: 5px;
     font-family: sans-serif;
-    stroke: darkblue;
+    stroke: var(--color-white);
 }
 
 .c-bar-chart__chart > rect {
-    fill: darkblue;
+    fill: none;
 }
 
-.c-bar-chart__bars > line {
+.c-bar-chart__bars > line:nth-child(1),
+.c-bar-chart__bars > line:nth-child(3),
+.c-bar-chart__bars > line:nth-child(5) {
     stroke-width: 20;
-    stroke: orange;
+    stroke: var(--color-primary-light);
+    transition:
+}
+
+.c-bar-chart__bars > line:nth-child(2),
+.c-bar-chart__bars > line:nth-child(4) {
+    stroke-width: 20;
+    stroke: var(--color-cta);
     transition:
 }
 
