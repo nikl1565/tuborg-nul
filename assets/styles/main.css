@@ -9,6 +9,8 @@
     --color-primary-light: #c8e0d9;
     --color-primary-dark: #0c1244;
 
+    --color-chart-one: #7180AC;
+
     --color-cta: #fbc17c;
 
     --color-white: #fff;
@@ -38,37 +40,6 @@
     --content-border-radius: 8px;
 }
 
-@font-face {
-    font-family: 'Tuborg Serif';
-    src: url("../fonts/TuborgSerif-Regular.eot");
-    src: url("/TuborgSerif-Regular.eot?#iefix") format("embedded-opentype"),url("../fonts/TuborgSerif-Regular.woff2") format("woff2"),url("../fonts/TuborgSerif-Regular.woff") format("woff");
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Tuborg Serif';
-    src: url("../fonts/TuborgSerif-Bold.eot");
-    src: url("../fonts/TuborgSerif-Bold.eot?#iefix") format("embedded-opentype"),url("../fonts/TuborgSerif-Bold.woff2") format("woff2"),url("../fonts/TuborgSerif-Bold.woff") format("woff");
-    font-weight: 700;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Tuborg Serif';
-    src: url("../fonts/TuborgSerif-Extrabold.eot");
-    src: url("../fonts/TuborgSerif-Extrabold.eot?#iefix") format("embedded-opentype"), url("../fonts/TuborgSerif-Extrabold.woff2") format("woff2"), url("../fonts/TuborgSerif-Extrabold.woff") format("woff");
-    font-weight: 800;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Tuborg Icons";
-    src: url("../fonts/tuborgdk.eot");
-    src: url("../fonts/tuborgdk.eot?#iefix") format("embedded-opentype"),url("../fonts/tuborgdk.woff") format("woff"),url("../fonts/tuborgdk.ttf") format("truetype"),url("../fonts/tuborgdk.svg#tuborgdk") format("svg");
-    font-weight: normal;
-    font-style: normal;
-}
 
 
 
@@ -82,6 +53,7 @@ html {
     line-height: 1.5;
     font-family: sans-serif;
     position: relative;
+    scroll-behavior: smooth;
 }
 
 *,
@@ -90,11 +62,38 @@ html {
     box-sizing: inherit;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, a, blockquote, pre, dl, dd, ol, ul, form, fieldset, legend, figure, table, th, td, caption, hr {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+blockquote,
+pre,
+dl,
+dd,
+ol,
+ul,
+form,
+fieldset,
+legend,
+figure,
+table,
+th,
+td,
+caption,
+hr,
+svg {
     padding: 0;
     margin: 0;
 }
 
+hr {
+    border: 0;
+}
 
 
 /*------------------------------------*\
@@ -110,17 +109,17 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Tuborg Serif', serif;
+    font-family: 'turnip-re', serif;
     font-weight: 400;
 }
 
 h1 {
-    font-weight: 800;
+    font-weight: 600;
     font-size: var(--font-size-h1);
 }
 
 h2 {
-    font-weight: 700;
+    font-weight: 600;
     font-size: var(--font-size-h2);
 }
 
@@ -143,6 +142,11 @@ button {
     font-weight: 400;
 }
 
+svg {
+    max-width: 100%;
+    fill: var(--color-white);
+}
+
 h1,
 h2,
 h3,
@@ -153,7 +157,8 @@ ul,
 ol,
 li,
 button,
-img {
+img,
+svg {
     margin-bottom: var(--content-spacing);
 }
 
@@ -164,8 +169,10 @@ p:last-child,
 ul:last-child,
 ol:last-child,
 li:last-child,
+a:last-child,
 button:last-child,
-img:last-child {
+img:last-child,
+svg:last-child {
     margin-bottom: 0;
 }
 
@@ -203,14 +210,25 @@ video {
   Skrives .c-indsæt-klasse-navn-her
 \*------------------------------------*/
 
+.c-background-video {
+    position: fixed;
+    z-index: -1;
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+}
+
 .c-page-heading {
     font-size: 5.25rem;
-    color: var(--color-black);
+    color: var(--color-white);
     text-align: center;
 }
 
 .c-page-subheading {
-    color: var(--color-black);
+    color: var(--color-white);
     text-align: center;
 }
 
@@ -231,9 +249,34 @@ video {
     font-size: var(--font-size-h3);
 }
 
+.c-icon {
+    width: 100px;
+}
+
+.c-section-spacing {
+    background-image: url(../icons/sectionend2a.svg);
+    background-size: auto;
+    height: 100px;
+    width: 100%;
+}
+
+.c-section-spacing--top {
+    align-self: flex-start;
+}
+
+.c-section-spacing--bottom {
+    align-self: flex-end;
+}
+
 
 .c-section {
     padding: var(--section-padding) 0;
+    background-color: var(--color-white);
+}
+
+.c-section--style {
+    display: flex;
+    flex-direction: column;
 }
 
 .c-section--cta {
@@ -252,17 +295,42 @@ video {
     color: var(--color-white);
 }
 
+.c-section.c-section--no-padding {
+    padding: 0;
+}
+
+
 
 .c-introduction {
-    background-color: var(--color-cta);
+    background-color: transparent;
+    min-height: 100vh;
+    width: 100%;
+    padding: 30px 0 0;
 }
 
 .c-introduction__tuborg-can {
     max-width: 280px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto auto 30px;
+
 }
 
+.c-introduction__button-arrow {
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+
+
+.c-tuborg-person__image {
+    max-width: 300px;
+}
+
+.c-tuborg-person__speak-bubble {
+    background-image: url(../icons/tuborg-talebobbel-groen.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
 
 
@@ -293,16 +361,11 @@ video {
     transition: background .15s ease-in;
 }
 
-.c-button:hover {
-}
+.c-button:hover {}
 
-.c-button:active {
+.c-button:active {}
 
-}
-
-.c-button:focus {
-
-}
+.c-button:focus {}
 
 .c-button--block {
     display: block;
@@ -319,13 +382,9 @@ video {
     background-color: var(--color-primary);
 }
 
-.c-button--inverse:active {
+.c-button--inverse:active {}
 
-}
-
-.c-button--inverse:focus {
-
-}
+.c-button--inverse:focus {}
 
 .c-button--inverse-white {
     color: var(--color-white);
@@ -337,13 +396,9 @@ video {
     color: var(--color-primary);
 }
 
-.c-button--inverse-white:active {
+.c-button--inverse-white:active {}
 
-}
-
-.c-button--inverse-white:focus {
-
-}
+.c-button--inverse-white:focus {}
 
 .c-button--cta {
     background-color: var(--color-cta);
@@ -351,8 +406,89 @@ video {
 }
 
 
+/*
+
+    Statistics section
+
+*/
+
+.c-statistics {
+    position: relative;
+}
+
+/* Circle diagram */
+.c-pie-chart {
+    width: 300px;
+    stroke-width: 100;
+    font-size: .5em;
+    transform: rotate(-90deg);
+    border-radius: 50%;
+    fill: none;
+}
+
+.c-pie-chart > circle {
+    transition: all 1s;
+}
+
+.c-pie-chart > circle:nth-child(1) {
+    stroke: var(--color-primary);
+}
+
+.c-pie-chart > circle:nth-child(2) {
+    stroke: var(--color-primary-dark);
+}
+
+.c-pie-chart > circle:nth-child(3) {
+    stroke: var(--color-chart-one);
+}
+
+.tooltip {
+    margin-left: 10px;
+    height: 60px;
+    width: 100px;
+    background-color: #000;
+    color: #fff;
+    position: absolute;
+}
+
+.tooltip.is-hidden {
+    display: none;
+}
 
 
+/* Bar chart */
+.c-bar-chart {
+    max-width: 500px;
+    background-color: aqua;
+}
+
+.c-bar-chart__chart {
+    color: aqua;
+}
+
+.c-bar-chart__chart > line {
+    stroke: blue;
+    stroke-width: .5;
+}
+
+.c-bar-chart__chart > text {
+    font-size: 5px;
+    font-family: sans-serif;
+    stroke: darkblue;
+}
+
+.c-bar-chart__chart > rect {
+    fill: darkblue;
+}
+
+.c-bar-chart__bars > line {
+    stroke-width: 20;
+    stroke: orange;
+    transition:
+}
+
+
+/* Video player */
 .c-video {
     position: relative;
 }
@@ -368,6 +504,8 @@ video {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
+    display: none;
 }
 
 .c-video__play-button {
@@ -376,11 +514,12 @@ video {
     background-color: var(--color-cta);
     border-radius: 50%;
     text-align: center;
+    cursor: pointer;
 }
 
 
 
-
+/* Game popup */
 .c-game-popup {
     position: fixed;
     z-index: 1;
@@ -410,7 +549,40 @@ video {
 
 
 /*------------------------------------*\
+  ANIMATIONS
+
+  Skrives .a-indsæt-klasse-navn-her
+\*------------------------------------*/
+
+.a-up-down {
+    animation: k-up-down 1.25s infinite alternate;
+}
+
+@keyframes k-up-down {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-40px);
+    }
+}
+
+
+/*------------------------------------*\
   UTILITIES
 
   Skrives .u-indsæt-klasse-navn-her
 \*------------------------------------*/
+
+.u-flex-grow-1 {
+    flex-grow: 1;
+}
+
+.u-flex-end {
+    align-self: flex-end;
+}
+
+.u-color-primary {
+    color: var(--color-primary);
+}

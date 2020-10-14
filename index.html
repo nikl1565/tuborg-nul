@@ -11,23 +11,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
     <!-- Title of the page -->
-    <title>Tuborg Nul</title>
+    <title>Tuborg Nul | Tag kontrollen tilbage</title>
     <!-- Meta Description of the page -->
-    <meta name="description" content="">
+    <meta name="description" content="Du behøver ikke blive hjemme bare fordi du skal noget dagen efter. Tuborgs nye alkoholfrie øl er helt uden alkohol, så tag bare en øl med vennerne.">
 
     <!-- Facebook Meta tags - Used when linking to the page via Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://insert-website-url-here.com/">
-    <meta property="og:title" content="">
-    <meta property="og:description" content="">
-    <meta property="og:image" content="https://insert-image-url-here.com/image.png">
+    <meta property="og:url" content="https://tuborg.dk/ol/nul/">
+    <meta property="og:title" content="Tuborg Nul | Tag kontrollen tilbage">
+    <meta property="og:description" content="Tuborgs nye alkoholfrie øl. Tuborg nul sætter fokus på stigmatisering. Nu skal alkoholfri øl være acceptabelt. Der skal være plads til at tage én uden alkohol og tuborg nul er helt uden procenter.">
+    <meta property="og:image" content="assets/images/tuborg-nul.png">
 
     <!-- Twitter Meta tags - Used when linking to the page via Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://insert-website-url-here.com/">
-    <meta property="twitter:title" content="">
-    <meta property="twitter:description" content="">
-    <meta property="twitter:image" content="https://insert-image-url-here.com/image.png">
+    <meta property="twitter:url" content="https://tuborg.dk/ol/nul/">
+    <meta property="twitter:title" content="Tuborg Nul | Tag kontrollen tilbage">
+    <meta property="twitter:description" content="Alkoholsfri øl helt uden alkohol. Tag en øl sammen med vennerne og kør hjem med god samvittighed. Tuborg Nul giver dig kontrollen tilbage.">
+    <meta property="twitter:image" content="assets/images/tuborg-nul.png">
 
     <!-- Link to CSS files -->
     <link rel="stylesheet" href="https://use.typekit.net/dod6bjg.css">
@@ -38,57 +38,34 @@
 
 <body>
 
-    <section class="c-section">
-        <div class="o-container">
-            <h1>Tuborg Nul</h1>
-            <h2>H2 headline</h2>
-            <h3>H3 headline</h3>
-            <h4>H4 headline</h4>
-            <h5>H5 headline</h5>
-            <h6>H6 headline</h6>
-
-            <p>Paragraph</p>
-
-            <ul>
-                <li>Unordered list</li>
-                <li>Unordered list</li>
-                <li>Unordered list</li>
-                <li>Unordered list</li>
-            </ul>
-
-            <ol>
-                <li>Ordered list</li>
-                <li>Ordered list</li>
-                <li>Ordered list</li>
-                <li>Ordered list</li>
-            </ol>
-        </div>
-    </section>
-
-
+    <video class="c-background-video" autoplay muted loop>
+        <source src="assets/media/coverbillede_web.mp4" type="video/mp4">
+    </video>
 
     <header class="c-page-header"></header>
 
     <main class="c-page-content">
 
-        <section class="c-introduction c-section c-section--cta">
+        <section class="c-introduction c-section c-section--style">
 
-            <div class="o-container">
+            <div class="o-container u-flex-grow-1">
                 <div class="c-introduction__content">
-                    <h1 class="c-page-heading">Tuborg Nul</h1>
+                    <h1 class="c-page-heading">Tuborg <span class="">NUL</span></h1>
                     <h2 class="c-page-subheading">
                         Samme fællesskab
                         <br>
                         0% Alkohol
                     </h2>
                     <img class="c-introduction__tuborg-can" src="assets/images/tuborg-nul-daase-vaad.png" alt="#">
-                    <img class="c-introduction__button-arrow" src="#" alt="#">
                 </div>
             </div>
-
+            <a href="#c-about-taste">
+                <img class="c-icon c-introduction__button-arrow a-up-down" src="assets/icons/ikon-pil-ned.svg" alt="#">
+            </a>
+            <hr class="c-section-spacing c-section-spacing--bottom">
         </section>
 
-        <section class="c-about-taste c-section">
+        <section id="c-about-taste" class="c-about-taste c-section js-c-about-taste">
 
             <div class="o-container">
                 <h2 class="c-section-heading">Tuborg Nul er unik.</h2>
@@ -97,7 +74,7 @@
                 <button class="c-button c-button--inverse">Tekst</button>
 
                 <div class="c-tuborg-person">
-                    <img class="c-tuborg-person__image" src="https://via.placeholder.com/150" alt="#">
+                    <img class="c-tuborg-person__image" src="assets/images/tuborg-kvinde.png" alt="#">
                     <div class="c-tuborg-person__speak-bubble">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum dolorum esse saepe quasi cum quisquam.</p>
                         <button class="[ c-button c-button--cta ] js-game-show-popup-button">Tekst</button>
@@ -115,12 +92,13 @@
 
                 <div class="c-video">
                     <div class="c-video__overlay js-video-player-overlay">
-                        <!--
-                        <img class="c-video__play-button js-video-player-button" src="" alt="#">
-                    -->
-                        <div class="c-video__play-button js-video-player-button" src="" alt="#"></div>
+                        <div class="c-video__play-button js-video-player-button">
+                        </div>
                     </div>
-                    <video class="c-campaign__video js-video-player-video" src="#" poster="https://picsum.photos/seed/picsum/1920/1080"></video>
+                    <video class="c-campaign__video js-video-player-video" controls>
+                        <source src="assets/media/tuborg-nul-reklamekampagne.mp4" type="video/mp4">
+                        Din browser understøtter ikke vores videoafspiller.
+                    </video>
                 </div>
 
                 <p>Hvordan drikker du din Tuborg Nul?</p>
@@ -131,8 +109,63 @@
         <section class="c-statistics c-section">
 
             <div class="o-container">
-                <h2>Statestikafdeling</h2>
+                <h2>Statistikafdeling</h2>
+
+                <div class="c-statistics__diagram-group">
+                    <svg class="c-pie-chart" viewbox="0 0 100 100" fill="none">
+                        <circle cx="50" cy="50" r="50" cursor="pointer" />
+                        <circle cx="50" cy="50" r="50" cursor="pointer" />
+                        <circle cx="50" cy="50" r="50" cursor="pointer" />
+                        <circle cx="50" cy="50" r="50" cursor="pointer" />
+                    </svg>
+
+                    <svg class="c-pie-chart" viewbox="0 0 100 100" fill="none">
+                        <circle cx="50" cy="50" r="50" cursor="pointer" />
+                        <circle cx="50" cy="50" r="50" cursor="pointer" />
+                        <circle cx="50" cy="50" r="50" cursor="pointer" />
+                        <circle cx="50" cy="50" r="50" cursor="pointer" />
+                    </svg>
+
+                    <svg class="c-bar-chart" viewbox="-20 -10 230 120">
+                        <g class="c-bar-chart__chart">
+                            <rect width="200" height="100"></rect>
+                            <text x="0" y="-3">Barchart</text>
+                            <text x="-10" y="5">100</text>
+                            <text x="-8" y="52">50</text>
+                            <text x="-5" y="100">0</text>
+                            <line x1="0" x2="0" y1="100" y2="0"></line>
+                            <line x1="0" x2="200" y1="0" y2="0"></line>
+                            <line x1="0" x2="200" y1="50" y2="50"></line>
+                            <line x1="0" x2="200" y1="100" y2="100"></line>
+                        </g>
+                        <g class="c-bar-chart__bars">
+                            <line x1="20" x2="20" y1="10" y2="100"></line>
+                            <line x1="50" x2="50" y1="50" y2="100"></line>
+                            <line x1="80" x2="80" y1="20" y2="100"></line>
+                        </g>
+                    </svg>
+
+                    <svg class="c-bar-chart" viewbox="-20 -10 230 120">
+                        <g class="c-bar-chart__chart">
+                            <rect width="200" height="100"></rect>
+                            <text x="0" y="-3">Barchart</text>
+                            <text x="-10" y="5">100</text>
+                            <text x="-8" y="52">50</text>
+                            <text x="-5" y="100">0</text>
+                            <line x1="0" x2="0" y1="100" y2="0"></line>
+                            <line x1="0" x2="200" y1="0" y2="0"></line>
+                            <line x1="0" x2="200" y1="50" y2="50"></line>
+                            <line x1="0" x2="200" y1="100" y2="100"></line>
+                        </g>
+                        <g class="c-bar-chart__bars">
+                            <line x1="20" x2="20" y1="10" y2="100"></line>
+                            <line x1="50" x2="50" y1="50" y2="100"></line>
+                            <line x1="80" x2="80" y1="20" y2="100"></line>
+                        </g>
+                    </svg>
+                </div>
             </div>
+            <div class="tooltip is-hidden js-tooltip"></div>
         </section>
 
         <section class="c-some-competition c-section">
@@ -144,28 +177,28 @@
                 <div class="o-image-grid">
                     <div class="o-image-grid__column">
                         <div class="c-image-card">
-                            <img class="c-image-card__image" src="https://picsum.photos/lol/picsum/1920/1080" alt="#">
+                            <img class="c-image-card__image" src="assets/images/some-1.jpg" alt="#">
                         </div>
                         <div class="c-image-card">
-                            <img class="c-image-card__image" src="https://picsum.photos/seed/picsum/1920/1080" alt="#">
-                        </div>
-                    </div>
-
-                    <div class="o-image-grid__column">
-                        <div class="c-image-card">
-                            <img class="c-image-card__image" src="https://picsum.photos/seed/picsum/1920/1080" alt="#">
-                        </div>
-                        <div class="c-image-card">
-                            <img class="c-image-card__image" src="https://picsum.photos/seed/picsum/1920/1080" alt="#">
+                            <img class="c-image-card__image" src="assets/images/some-2.jpg" alt="#">
                         </div>
                     </div>
 
                     <div class="o-image-grid__column">
                         <div class="c-image-card">
-                            <img class="c-image-card__image" src="https://picsum.photos/seed/picsum/1920/1080" alt="#">
+                            <img class="c-image-card__image" src="assets/images/some-3.jpg" alt="#">
                         </div>
                         <div class="c-image-card">
-                            <img class="c-image-card__image" src="https://picsum.photos/seed/picsum/1920/1080" alt="#">
+                            <img class="c-image-card__image" src="assets/images/some-4.jpg" alt="#">
+                        </div>
+                    </div>
+
+                    <div class="o-image-grid__column">
+                        <div class="c-image-card">
+                            <img class="c-image-card__image" src="assets/images/some-5.jpg" alt="#">
+                        </div>
+                        <div class="c-image-card">
+                            <img class="c-image-card__image" src="assets/images/some-5.jpg" alt="#">
                         </div>
                     </div>
                 </div>
@@ -177,8 +210,7 @@
     </main>
 
     <footer class="c-page-footer">
-        <img class="c-page-footer__tuborg-logo" src="assets/icons/icon-tuborg-footer.svg" alt="#">
-
+        <img class="c-page-footer__tuborg-logo" src="assets/icons/ikon-tuborg-footer.svg" alt="#">
     </footer>
 
     <div class="c-game-popup is-hidden js-game-popup">
@@ -211,6 +243,4 @@
     </div>
 
     <script src="assets/scripts/script.js"></script>
-</body>
-
-</html>
+</body></html>
